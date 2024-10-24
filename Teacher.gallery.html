@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teacher Gallery</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(135, 206, 235, 0.5)), url('https://example.com/your-technology-image.jpg');
+      background-size: cover;
+      background-attachment: fixed;
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .gallery {
+      margin-top: 50px;
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.1);
+    }
+
+    .gallery-item .description {
+      position: absolute;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.7);
+      color: white;
+      width: 100%;
+      text-align: center;
+      padding: 10px;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .gallery-item:hover .description {
+      opacity: 1;
+    }
+
+    .gallery-title {
+      text-align: center;
+      margin: 50px 0;
+      font-size: 36px;
+      font-weight: bold;
+      color: #343a40;
+      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .description-title {
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .description-text {
+      font-size: 14px;
+      margin-top: 5px;
+    }
+
+    /* Custom styles for sidebar */
+    #sidebar {
+      width: 250px;
+      transition: all 0.3s;
+      position: fixed;
+      top: 0;
+      left: -250px;
+      height: 100vh;
+      overflow-y: auto;
+      background-color: #343a40;
+      color: #fff;
+      padding-top: 3.5rem;
+      z-index: 1000;
+    }
+
+    #sidebar.show {
+      left: 0;
+    }
+
+    #content {
+      transition: margin-left 0.3s;
+      margin-left: 0;
+      padding: 20px;
+    }
+
+    #content.ml-250 {
+      margin-left: 250px;
+    }
+
+    @media (max-width: 768px) {
+      #sidebar {
+        width: 100%;
+        left: -100%;
+      }
+
+      #sidebar.show {
+        left: 0;
+      }
+
+      #content {
+        margin-left: 0;
+      }
+    }
+
+    /* Style for sidebar links */
+    #sidebar .list-group-item {
+      background-color: transparent;
+      border: none;
+      border-radius: 0;
+      color: #fff;
+      margin-left: 10px;
+    }
+
+    /* Style for sidebar button */
+    #sidebarCollapse {
+      position: fixed;
+      top: 1rem;
+      left: 1rem;
+      z-index: 1001;
+      background: none;
+      border: none;
+      color: gray;
+      font-size: 1.5rem;
+    }
+
+    /* Slide-in animation */
+    @keyframes slideIn {
+      0% {
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    .gallery-item {
+      animation: slideIn 0.8s ease forwards;
+    }
+
+    .gallery-item:nth-child(1) {
+      animation-delay: 0.1s;
+    }
+
+    .gallery-item:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .gallery-item:nth-child(3) {
+      animation-delay: 0.3s;
+    }
+
+    .gallery-item:nth-child(4) {
+      animation-delay: 0.4s;
+    }
+
+    .gallery-item:nth-child(5) {
+      animation-delay: 0.5s;
+    }
+
+    .gallery-item:nth-child(6) {
+      animation-delay: 0.6s;
+    }
+    .tito{
+  text-align: center;
+}
+  </style>
+</head>
+
+<body>
+
+  <!-- Sidebar -->
+  <nav id="sidebar">
+    <div class="sidebar-header">
+      <h3 class="tito">Menu</h3>
+    </div>
+    <ul class="list-group list-group-flush">
+      <a class="list-group-item" role="button" href="index.html">Home</a>
+      <a class="list-group-item" role="button" href="Projects.html">Exit</a>
+      <a class="list-group-item" role="button" href="character.html">Profile</a>
+    </ul>
+  </nav>
+  <!-- End Sidebar -->
+
+  <!-- Burger Icon -->
+  <button class="btn btn-dark burger-icon" id="sidebarCollapse">
+    <i class="fas fa-bars"></i>
+  </button>
+  <!-- End Burger Icon -->
+
+  <div id="content">
+    <div class="container">
+      <h2 class="gallery-title">Teachers Gallery</h2>
+
+      <div class="row gallery">
+        <div class="col-lg-4 col-md-6 col-sm-12 gallery-item">
+          <img src="Jestony.png" alt="Image 1" class="img-fluid">
+          <div class="description">
+            <div class="description-title">Teacher: Jestony S. Alvarez</div>
+            <div class="description-text">Subject: SSP-007 and ITE-359</div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12 gallery-item">
+          <img src="Aira.png" alt="Image 2" class="img-fluid">
+          <div class="description">
+            <div class="description-title">Teacher: Aira Lucero</div>
+            <div class="description-text">Subject: ITE-302</div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12 gallery-item">
+          <img src="DL.png" alt="Image 3" class="img-fluid">
+          <div class="description">
+            <div class="description-title">Teacher: Mikel Legaspi</div>
+            <div class="description-text">Subject: ITE-387</div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12 gallery-item">
+          <img src="John.png" alt="Image 4" class="img-fluid">
+          <div class="description">
+            <div class="description-title">Teacher: John Frederick</div>
+            <div class="description-text">Subject: ITE-307 and ITE-353</div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12 gallery-item">
+          <img src="https://via.placeholder.com/300" alt="Image 5" class="img-fluid">
+          <div class="description">
+            <div class="description-title">Teacher: Arjay Maniego</div>
+            <div class="description-text">Subject: ITE-314</div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12 gallery-item">
+          <img src="https://via.placeholder.com/300" alt="Image 6" class="img-fluid">
+          <div class="description">
+            <div class="description-title">Beautiful Landscape</div>
+            <div class="description-text">A stunning view of the mountains during sunset.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      document.getElementById('sidebarCollapse').addEventListener('click', function () {
+        const sidebar = document.getElementById('sidebar');
+        const content = document.getElementById('content');
+        sidebar.classList.toggle('show');
+        content.classList.toggle('ml-250');
+      });
+    });
+  </script>
+</body>
+
+</html>

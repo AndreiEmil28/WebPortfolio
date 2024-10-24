@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+<link href='https://fonts.googleapis.com/css?family=Raleway:400,300' rel='stylesheet' type='text/css'>
+<style>
+  body {
+    /* Use linear gradient for background color */
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(135, 206, 235, 0.5)), url('https://example.com/your-technology-image.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Raleway', sans-serif;
+    color: #000;
+    margin: 0;
+    padding: 0;
+}
+
+
+    .text {
+        font-size: 40px;
+        text-align: center;
+        margin-top: 20px;
+    }
+    .text1 {
+        font-size: 21px;
+        text-align: center;
+        margin-top: -20px;
+    }
+    .image {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        box-shadow: 0 0 0 1px #eee;
+        background: url(profile\ pic.jpg) center center no-repeat;
+        background-size: cover;
+        margin: auto;
+        margin-top: 60px;
+        cursor: pointer;
+    }
+    .image:hover {
+        box-shadow: 0px 5px 20px .9px #3F3F3F;
+        transform: scale(1.12);
+        transition: transform 1.6s ease-in-out;
+    }
+    #overlay {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        padding: 0;
+        opacity: 1.0;
+        transition: opacity 2.25s ease;
+        animation: slideIn 2s ease-out forwards;
+    }
+    .panel-group {
+        margin: auto;
+        max-width: 350px;
+        animation: fadeIn 3s ease-out forwards;
+
+    }
+    @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+}
+    .title {
+        background-color: transparent;
+        color: #000;
+        font-weight: 300;
+        font-size: 15px;
+        text-align: center;
+        margin-bottom: 0;
+        
+    }
+    .btn-outline {
+        color: inherit;
+        transition: all 0.3s;
+        background-color: transparent;
+        border-color: #000;
+        padding: 10px 0;
+        width: 100%;
+        text-align: center;
+        font-family: 'Raleway', sans-serif;
+        font-weight: 300;
+    }
+    .btn-outline:hover {
+        color: #fff;
+        background-color: #000;
+    }
+    .text{
+        animation: slideIn 2s ease-out forwards;
+        
+    }
+    @keyframes slideIn {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+    .text1{
+        animation: slideIn 2s ease-out forwards;
+    }
+    @keyframes fadeZoomIn {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+    
+</style>
+</head>
+<body>
+    <div class="box">
+        <div id="overlay">
+            <div class="image"></div>
+            <ul class="text">Andrei Emil Nakpil</ul>
+            <div class="text1">A Front End Developer</div>
+        </div>
+    </div>
+
+    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingOne">
+                <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        <div class="title btn btn-danger btn-outline btn-lg">ABOUT ME</div>
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                <div class="panel-body">
+                    Andrei has been building websites for years. He enjoys making unique websites and web projects. His hobbies include Basketball, Programming, Going to Gym, and Playing Online Games.
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingTwo">
+                <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-parent="#accordion" href="character.html" aria-expanded="false" aria-controls="collapseTwo">
+                        <div class="title btn btn-danger btn-outline btn-lg">Profile</div>
+                    </a>
+                </h4>
+            </div>
+        </div>
+        
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingThree">
+                <h4 class="panel-title">
+                    <!-- Wrap the button inside an anchor tag with the URL "Projects.html" -->
+                    <a class="collapsed" role="button" href="Projects.html" aria-expanded="false" aria-controls="collapseThree">
+                        <div class="title btn btn-danger btn-outline btn-lg">My Works</div>
+                    </a>
+                </h4>
+            </div>
+        </div>
+        
+
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script>
+        // Optionally, you can use JavaScript to delay the appearance of the text
+        document.addEventListener('DOMContentLoaded', function() {
+          // You can add more delay if needed
+          setTimeout(function() {
+            document.querySelector('.label').style.visibility = 'visible';
+          }, 500); // 500ms delay
+        });
+      </script>
+</body>
+</html>
