@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <!-- Font Awesome for burger icon -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        body {
+            background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(135, 206, 235, 0.5)), url('https://example.com/your-technology-image.jpg');
+      background-size: cover;
+      background-attachment: fixed;
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+        }
+
+        .banner {
+            background: #a770ef;
+            background: -webkit-linear-gradient(to right, #a770ef, #cf8bf3, #fdb99b);
+            background: linear-gradient(to right, #a770ef, #cf8bf3, #fdb99b);
+            color: #fff;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 5px;
+            box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Custom styles for sidebar */
+        #sidebar {
+            width: 250px;
+            transition: all 0.3s;
+            position: fixed;
+            top: 0;
+            left: -250px;
+            height: 100vh;
+            overflow-y: auto;
+            background-color: #343a40;
+            color: #fff;
+            padding-top: 3.5rem;
+            z-index: 1000; /* Ensure sidebar stays above content */
+        }
+
+        #sidebar.show {
+            left: 0;
+        }
+
+        #content {
+            transition: margin-left 0.3s;
+            margin-left: 0;
+            padding: 20px;
+        }
+
+        @media (max-width: 768px) {
+            #sidebar {
+                width: 100%;
+                left: -100%;
+            }
+
+            #sidebar.show {
+                left: 0;
+            }
+
+            #content {
+                margin-left: 0;
+            }
+        }
+
+        /* Style for sidebar links */
+        #sidebar .list-group-item {
+            background-color: transparent;
+            border: none;
+            border-radius: 0;
+            color: #fff;
+            margin-left: 10px;
+        }
+
+        /* Style for sidebar links when hovered */
+        #sidebar .list-group-item:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #f8f9fa;
+        }
+
+        /* Style for sidebar button */
+        #sidebarCollapse {
+            position: fixed;
+            top: 1rem;
+            left: 1rem;
+            z-index: 1001; /* Ensure button stays above sidebar */
+            background: none;
+            border: none;
+            color:gray;
+            font-size: 1.5rem;
+        }
+
+        /* Custom styles for sidebar */
+        #sidebar {
+            padding-top: 3.5rem;
+        }
+
+        .sidebar-header {
+            padding: 1rem;
+            text-align: center;
+            background-color: #495057;
+        }
+
+        .sidebar-header h3 {
+            margin-bottom: 0;
+            color: #fff;
+        }
+
+        .list-group-item {
+            background-color: #343a40;
+            border: none;
+        }
+
+        .list-group-item:hover {
+            background-color: #212529;
+        }
+
+        /* Gallery item styles */
+        .gallery-item {
+            transition: transform 0.3s ease-in-out;
+            
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-item .card {
+            height: 100%;
+        }
+
+        /* Adjust content margin to accommodate sidebar */
+        .ml-250 {
+            margin-left: 250px;
+        }
+        @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(100px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+}
+@keyframes slideIn1 {
+  from {
+    transform: translateY(70%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slideIn2 {
+  from {
+    transform: translateY(80%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slideIn3 {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.col1{
+  animation:  slideIn1 2s ease-out forwards;
+}
+.col2{
+  animation: slideIn2 2s ease-out forwards;
+}
+.col3{
+  animation: slideIn3 2s ease-out forwards;
+}
+    </style>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="container-fluid">
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Menu</h3>
+            </div>
+            <ul class="list-group list-group-flush">
+                <a class="list-group-item" role="button"  href="index.html">Home</a>
+                 <a class="list-group-item" role="button"  href="Projects.html">Exit</a>
+                 <a class="list-group-item" role="button"  href="character.html">Profile</a>
+             </ul>
+        </nav>
+        <!-- End Sidebar -->
+
+        <!-- Page content -->
+        <div id="content">
+            <div class="px-lg-5">
+                <!-- For demo purpose -->
+                <div class="row py-5">
+                    <div class="col-lg-12 mx-auto">
+                        <div class="text-white p-5 shadow-sm rounded banner">
+                            <h1 class="display-4">Student Management</h1>
+                        </div>
+                    </div>
+                </div>
+                <!-- End -->
+                
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+                    <!-- Gallery items go here -->
+                    <!-- Gallery item -->
+                    <div class="col1">
+                        <div class="gallery-item">
+                            <div class="card h-100">
+                                <img src="StudentManagement1.png" class="card-img-top" alt="..." id="galleryImage1" data-bs-toggle="modal" data-bs-target="#galleryModal">
+                                <div class="card-body">
+                                    <h5 class="card-title">Student Management Log in</h5>
+                                    <p class="card-text">Subject in ITE298.</p>
+                                    <a href="https://drive.google.com/drive/folders/1zTqx0RDVdkYQ_B5NL0UQpdYd14MYsT-4" target="_blank" class="btn btn-primary view-details-btn" data-image="StudentManagement1.png" data-details="Student Management">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End -->
+                    <div class="col2">
+                      <div class="gallery-item">
+                          <div class="card h-100">
+                              <img src="StudentManagement3.png" class="card-img-top" alt="..." id="galleryImage1" data-bs-toggle="modal" data-bs-target="#galleryModal">
+                              <div class="card-body">
+                                  <h5 class="card-title">Student List</h5>
+                                  <p class="card-text">Subject in ITE298.</p>
+                                  <a href="https://drive.google.com/drive/folders/1zTqx0RDVdkYQ_B5NL0UQpdYd14MYsT-4" target="_blank"  class="btn btn-primary view-details-btn" data-image="StudentManagement3.png" data-details="Student Management">View Details</a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                    <!-- Repeat other gallery items with similar structure -->
+                    <div class="col3">
+                      <div class="gallery-item">
+                          <div class="card h-100">
+                              <img src="StudentManagement2.png" class="card-img-top" alt="..." id="galleryImage1" data-bs-toggle="modal" data-bs-target="#galleryModal">
+                              <div class="card-body">
+                                  <h5 class="card-title">Add a student</h5>
+                                  <p class="card-text">Subject in ITE298.</p>
+                                  <a href="https://drive.google.com/drive/folders/1zTqx0RDVdkYQ_B5NL0UQpdYd14MYsT-4" target="_blank"  class="btn btn-primary view-details-btn" data-image="StudentManagement2.png" data-details="Student Management">View Details</a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Page Content -->
+    </div>
+
+    <!-- Burger Icon -->
+    <button class="btn btn-dark burger-icon" id="sidebarCollapse"><i class="fas fa-bars"></i></button>
+    <!-- End Burger Icon -->
+    <!-- Font Awesome Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+
+  <!-- Modal for Gallery Details -->
+<div class="modal fade" id="galleryModal" tabindex="-1" aria-labelledby="galleryModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-custom-width">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="galleryModalLabel">Gallery Details</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <img src="" class="img-fluid" id="modalImage" alt="">
+              <p id="modalDetails"></p>
+          </div>
+      </div>
+  </div>
+</div>
+<!-- End Modal -->
+
+<style>
+  /* Custom modal width */
+  @media (min-width: 768px) {
+      .modal-custom-width {
+          max-width: 60%;
+      }
+  }
+</style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const viewDetailsBtns = document.querySelectorAll('.view-details-btn');
+
+            viewDetailsBtns.forEach(btn => {
+                btn.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const imageSrc = btn.getAttribute('data-image');
+                    const details = btn.getAttribute('data-details');
+
+                    // Set modal image and details
+                    document.getElementById('modalImage').src = imageSrc;
+                    document.getElementById('modalDetails').textContent = details;
+
+                    // Show modal
+                    const modal = new bootstrap.Modal(document.getElementById('galleryModal'));
+                    modal.show();
+                });
+            });
+
+            document.getElementById('sidebarCollapse').addEventListener('click', function () {
+                const sidebar = document.getElementById('sidebar');
+                const content = document.getElementById('content');
+                sidebar.classList.toggle('show');
+                content.classList.toggle('ml-250');
+            });
+
+            // Close sidebar when clicking anywhere on the screen except sidebar
+            window.addEventListener('click', function (e) {
+                const sidebar = document.getElementById('sidebar');
+                const sidebarButton = document.getElementById('sidebarCollapse');
+                if (!sidebar.contains(e.target) && e.target !== sidebarButton) {
+                    sidebar.classList.remove('show');
+                    document.getElementById('content').classList.remove('ml-250');
+                }
+            });
+
+            // Close modal when clicking outside the modal
+            const modal = document.getElementById('galleryModal');
+            modal.addEventListener('click', function (e) {
+                if (e.target === modal) {
+                    const bsModal = bootstrap.Modal.getInstance(modal);
+                    bsModal.hide();
+                }
+            });
+            document.querySelectorAll('.view-details-btn').forEach(button => {
+    button.addEventListener('click', function (event) {
+        window.open(this.href, '_blank');
+    });
+});
+
+        });
+    </script>
+</body>
+</html>
